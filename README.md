@@ -62,10 +62,10 @@ src/
 
 | Developer | Entities | Main folders |
 |-----------|----------|--------------|
-| **Dev A** | Events | `components/events/`, `services/event.service.ts`, `pages/events/` |
-| **Dev B** | Sessions & Rooms | `components/sessions/`, `components/rooms/`, `services/session.service.ts` |
-| **Dev C** | Speakers | `components/speakers/`, `services/speaker.service.ts`, `pages/speakers/` |
-| **Dev D** | Questions & Live | `components/sessions/QuestionList.tsx`, `services/question.service.ts`, `utils/socket.ts` |
+| **[Valisoa](https://github.com/valisoa01)** | Events | `components/events/`, `services/event.service.ts`, `pages/events/` |
+| **[David](https://github.com/DavFilsDev)** | Sessions & Rooms | `components/sessions/`, `components/rooms/`, `services/session.service.ts` |
+| **[Zinedis](https://github.com/Safid849)** | Speakers | `components/speakers/`, `services/speaker.service.ts`, `pages/speakers/` |
+| **[Herinjaka](https://github.com/24194Njaka)** | Questions & Live | `components/sessions/QuestionList.tsx`, `services/question.service.ts`, `utils/socket.ts` |
 
 ## 🔧 Available Scripts
 
