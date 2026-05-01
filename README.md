@@ -1,40 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 🎯 EventSync Frontend
 
-## Getting Started
+Frontend de la plateforme EventSync - Gestion d'événements en temps réel.
 
-First, run the development server:
+## 🚀 Technologies
+
+- **Framework**: Next.js (Page Router)
+- **Langage**: TypeScript
+- **Styling**: TailwindCSS v4.2
+- **État**: React Context + Hooks personnalisés
+- **HTTP Client**: Axios
+- **Temps réel**: Socket.io-client
+
+## 📋 Prérequis
+
+- Node.js (v18 ou supérieur)
+- npm (v9 ou supérieur)
+
+## ⚡ Installation
 
 ```bash
+# 1. Cloner le repository
+git clone https://github.com/your-org/eventsync-frontend.git
+cd eventsync-frontend
+
+# 2. Installer les dépendances
+npm install
+
+# 3. Configurer les variables d'environnement
+cp .env.example .env.local
+# Éditer .env.local avec vos valeurs
+
+# 4. Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📁 Structure du projet
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+src/
+├── components/          # Composants React par entité
+│   ├── common/         # Composants génériques (Layout, Button, etc.)
+│   ├── events/         # Composants Events
+│   ├── sessions/       # Composants Sessions
+│   ├── speakers/       # Composants Speakers
+│   ├── rooms/          # Composants Rooms
+│   └── admin/          # Composants admin
+├── pages/              # Pages Next.js (Page Router)
+│   ├── events/         # Pages Events
+│   ├── sessions/       # Pages Sessions
+│   ├── speakers/       # Pages Speakers
+│   └── admin/          # Pages admin
+├── services/           # Services API par entité
+├── hooks/              # Hooks personnalisés
+├── types/              # Types TypeScript
+├── contexts/           # React Contexts
+├── utils/              # Utilitaires
+└── styles/             # Styles globaux
+```
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 👥 Répartition des tâches (4 développeurs)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+| Développeur | Entités | Dossiers principaux |
+|-------------|---------|---------------------|
+| **Dev A** | Events | `components/events/`, `services/event.service.ts`, `pages/events/` |
+| **Dev B** | Sessions & Rooms | `components/sessions/`, `components/rooms/`, `services/session.service.ts` |
+| **Dev C** | Speakers | `components/speakers/`, `services/speaker.service.ts`, `pages/speakers/` |
+| **Dev D** | Questions & Live | `components/sessions/QuestionList.tsx`, `services/question.service.ts`, `utils/socket.ts` |
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🔧 Scripts disponibles
 
-## Learn More
+- `npm run dev` - Lance le serveur de développement
+- `npm run build` - Build de production
+- `npm run start` - Lance le serveur de production
+- `npm run lint` - Vérifie le code avec ESLint
+- `npm run type-check` - Vérifie les types TypeScript
 
-To learn more about Next.js, take a look at the following resources:
+## 🌐 Variables d'environnement
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+```env
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+NEXT_PUBLIC_SOCKET_URL=http://localhost:3000
+NEXT_PUBLIC_APP_URL=http://localhost:3001
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Règles pour éviter les conflits Git
 
-## Deploy on Vercel
+1. **Toujours travailler sur une branche dédiée**
+   ```bash
+   git checkout -b feature/nom-de-la-fonctionnalite
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Ne pas modifier les fichiers d'un autre développeur**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+3. **Communiquer avant de modifier**:
+   - `src/pages/_app.tsx`
+   - `src/pages/_document.tsx`
+   - `src/contexts/` (fichiers globaux)
+
+4. **Faire des commits atomiques et fréquents**
+
+5. **Créer une Pull Request avant de merger dans main**
+
+## 🐛 Dépannage
+
+### Erreur de type avec Prisma
+```bash
+npm run type-check
+```
+
+### Port déjà utilisé
+```bash
+# Changer le port dans package.json
+"dev": "next dev -p 3001"
+```
+
+## 📄 Licence
+
+MIT
