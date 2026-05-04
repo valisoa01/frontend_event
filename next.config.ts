@@ -2,10 +2,8 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
-  
+
   images: {
-    domains: ['localhost'],
     remotePatterns: [
       {
         protocol: 'http',
@@ -14,7 +12,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  
+
   async rewrites() {
     return [
       {
@@ -23,15 +21,9 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  
-  // Ignorer les erreurs TypeScript pendant le build
+
   typescript: {
     ignoreBuildErrors: false,
-  },
-  
-  // Ignorer les erreurs ESLint pendant le build
-  eslint: {
-    ignoreDuringBuilds: false,
   },
 };
 
