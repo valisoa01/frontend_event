@@ -22,12 +22,10 @@ export default function Header() {
     <header className="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-50">
       <nav className="container-custom py-4">
         <div className="flex justify-between items-center">
-          {/* Logo */}
           <Link href="/" className="text-2xl font-bold text-primary-500 hover:text-primary-600 transition">
             EventSync
           </Link>
           
-          {/* Navigation Links */}
           <div className="flex gap-6 items-center">
             <Link href="/events" className="text-gray-600 hover:text-primary-500 transition">
               Events
