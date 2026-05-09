@@ -51,6 +51,8 @@ src/
 │   ├── common/           # Header, Footer, Layout components
 │   ├── events/           # Events components
 │   ├── sessions/         # Sessions components
+│   ├── Rooms/         # Rooms components
+│   ├── Questions/         # Questions components
 │   └── speakers/         # Speakers components
 ├── services/             # API services
 ├── hooks/                # Custom hooks
