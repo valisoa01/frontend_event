@@ -39,7 +39,7 @@ export default function HomePage() {
             Ready to explore events?
           </h2>
           <p className="text-gray-600 mb-6">
-            Browse upcoming events and start your interactive experience.
+            Browse upcoming events and start your interactive experience .
           </p>
           <button className="btn-primary">
             Browse Events
